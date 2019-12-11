@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    abstract class Case
+    class GoToJailFactory : CaseFactory
     {
-        
+
     }
 }
