@@ -9,7 +9,8 @@ namespace Monopoly
     class Plateau
     {
         private Case[] board;
-        public Joueur[] listJoueur;
+        private Joueur[] listJoueur;
+        private static int numCurrentJoueur=0;
         private bool game;
         private static Plateau instance = null;
         private static readonly object padlock = new object();
@@ -59,35 +60,14 @@ namespace Monopoly
                 return instance;
             }
         }
-    }
-}
-public sealed class TheBell
-{
-    private static TheBell bellConnection;
-    private static object syncRoot = new Object();
-
-
-    /// <summary>
-    /// We implement this method to ensure thread safety for our singleton.
-    /// </summary>
-    public static TheBell Instance
-    {
-        get
+        public Joueur CurrentJoueur()
         {
-            lock (syncRoot)
-            {
-                if (bellConnection == null)
-                {
-                    bellConnection = new TheBell();
-                }
-            }
-
-            return bellConnection;
+            return listJoueur[numCurrentJoueur];
         }
-    }
-
-    public void Ring()
-    {
-        Console.WriteLine("Ding! Order up!");
+        public void NextJoueur()
+        {
+            numCurrentJoueur=(numCurrentJoueur + 1)%listJoueur.Length;
+            Console.WriteLine("C'est au tour de : " + listJoueur[numCurrentJoueur].Pion);
+        }
     }
 }
