@@ -12,6 +12,7 @@ namespace Monopoly
         private string streetName;
         private int rent;
         private int price;
+        private string actionName = null;
 
         public Propriete(string streetName, int rent, int price)
         {
@@ -38,6 +39,11 @@ namespace Monopoly
         {
             get { return this.price; }
             set { this.price = value; }
+        }
+        public override string ActionName
+        {
+            get { return this.actionName; }
+            set { this.actionName = value; }
         }
 
     }

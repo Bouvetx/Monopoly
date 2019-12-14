@@ -10,13 +10,13 @@ namespace Monopoly
     {
         static void Main(string[] args)
         {
-            // CaseFactory case1 = new ActionFactory("Départ");
+            CaseFactory case1 = new ActionFactory("Départ");
             CaseFactory case2 = new ProprieteFactory("rue des andes", 25, 120);
-            //Case case1bis = case1.GetCreditCard();
-            //Console.WriteLine("Action name: {0}",case1bis.ActionName);
-            Case case3 = case2.GetCase();
-            Console.WriteLine("street: {0}\n rent: {1}\n price: {2}", case3.StreetName, case3.Rent, case3.Price);/*
-
+            Case action = case1.GetCase();
+            Console.WriteLine("Action name: {0}",action.ActionName);
+            Case prop = case2.GetCase();
+            Console.WriteLine("street: {0}\nrent: {1}\nprice: {2}", prop.StreetName, prop.Rent, prop.Price);
+            /*
             Console.WriteLine();
             Plateau P = Plateau.Instance;
             int numJ=0;
