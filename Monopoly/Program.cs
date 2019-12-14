@@ -11,7 +11,7 @@ namespace Monopoly
         static void Main(string[] args)
         {
             // CaseFactory case1 = new ActionFactory("Départ");
-            CaseFactory case2 = new PropFactory("rue des andes", 25, 120);
+            CaseFactory case2 = new ProprieteFactory("rue des andes", 25, 120);
             //Case case1bis = case1.GetCreditCard();
             //Console.WriteLine("Action name: {0}",case1bis.ActionName);
             Case case3 = case2.GetCase();

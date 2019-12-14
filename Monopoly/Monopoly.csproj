@@ -45,11 +45,13 @@
   <ItemGroup>
     <Compile Include="Action.cs" />
     <Compile Include="Case.cs" />
+    <Compile Include="CaseFactory.cs" />
     <Compile Include="Joueur.cs" />
     <Compile Include="Plateau.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Propriete.cs" />
+    <Compile Include="ProprieteFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
