@@ -9,6 +9,7 @@ namespace Monopoly
     class Propriete : Case
     {
         private readonly string _caseType;
-        private int 
+        private int rent;
+        private int price;
     }
 }
