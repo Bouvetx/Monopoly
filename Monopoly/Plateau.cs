@@ -8,13 +8,38 @@ namespace Monopoly
 {
     class Plateau
     {
-        Case[] board;
+        private Case[] board;
+        public Joueur[] listJoueur;
+        private bool game;
         private static Plateau instance = null;
         private static readonly object padlock = new object();
 
         Plateau()
         {
+            int num;
+            Console.WriteLine("Veuillez entrer le nombre de joueur (<16)");
+            Int32.TryParse(Console.ReadLine(), out num);
+            while (num > 16 || num < 2)
+            {
+                Console.WriteLine("Veuillez entrer le nombre de joueur (<16)");
+                Int32.TryParse(Console.ReadLine(), out num);
+            }
+            listJoueur = new Joueur[num];
+            for (int i = 0; i < num; i++)
+            {
+                listJoueur[i] = new Joueur();
+            }
+
+            game = true;
             board = new Case[40];
+        }
+
+        public bool Game
+        {
+            get
+            {
+                return game;
+            }
         }
 
         public static Plateau Instance
