@@ -8,7 +8,7 @@ namespace Monopoly
 {
     class Joueur
     {
-        private int fond;
+       private int fond;
         private string pion;
         private string[] pionList = { "Le Chapeau Haut-de-Forme", "La Voiture", "Le Bateau", "Le Dé à coudre", "La Chaussure", "La Brouette", "Pion chapeau du MonopolyLe Chien", "Le Fer à repasser", "Le Cavalier et son Cheval", "Le Chat", "Pion chat du Monopoly", "Le Sac de Billets", "Le Canon", "La Lanterne", "Le Cheval à Bascule", "Le Sac à Mains" };
 

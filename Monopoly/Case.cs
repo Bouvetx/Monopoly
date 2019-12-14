@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    abstract class Case
+    public abstract class Case
     {
-        public abstract string CaseType {get;}
+        public abstract string CaseType { get; }
+        public abstract string StreetName { get; set; }
+        public abstract int Rent { get; set; }
+        public abstract int Price { get; set; }
+
     }
 }

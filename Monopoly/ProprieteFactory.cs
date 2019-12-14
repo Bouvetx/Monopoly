@@ -8,18 +8,22 @@ namespace Monopoly
 {
     class ProprieteFactory : CaseFactory
     {
+        private readonly string caseType;
         private string streetName;
-        private int startingValue;
+        private int rent;
+        private int price;
 
-        public ProprieteFactory(string streetName, string startintValue)
+        public ProprieteFactory(string streetName, int rent, int price)
         {
+            this.caseType = "Proprieté";
             this.streetName = streetName;
-            this.startingValue = startingValue;
+            this.rent = rent;
+            this.price = price;
         }
 
-        public override Case getCase()
+        public override Case GetCase()
         {
-            return new ProprieteFactory(this.streetName, this.startingValue);
+            return new Propriete(this.streetName, this.rent, this.price);
         }
     }
 }

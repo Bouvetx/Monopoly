@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    abstract class CaseFactory
+    public abstract class CaseFactory
     {
-        public abstract Case GetCase() { }
+        public abstract Case GetCase();
     }
 }
+

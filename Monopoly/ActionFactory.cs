@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    class Action 
+   /* class ActionFactory : CaseFactory
     {
-        /*private readonly string caseType;
+        private readonly string caseType;
         private string actionName;
 
         public Propriete(string actionName)
@@ -16,14 +16,9 @@ namespace Monopoly
             this.caseType = "Action";
             this.actionName = actionName;
         }
-        public override string CaseType
+        public override Case getCase()
         {
-            get { return this.caseType;  }
-        
-        public override string ActionName
-        {
-            get { return this.actionName; }
-            set { this.actionName = value; }
-        }*/
-    }
+            return new ActionFactory(this.actionName);
+        }
+    }*/
 }
