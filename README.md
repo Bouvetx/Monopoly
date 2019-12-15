@@ -2,7 +2,7 @@
 *v2*
 **Project by Bouvet Xavier and Cantie Maxime**
 
-The project was to create a Monopoly game implementing different design pattern , for this we choiced a Singleton, an Observer and a Factory design pattern.
+The project was to create a Monopoly game implementing different design pattern , for this we choose a Singleton, an Observer and a Factory design pattern.
 
 **THE SINGLETON**
 
