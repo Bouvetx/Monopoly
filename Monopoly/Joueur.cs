@@ -8,7 +8,7 @@ namespace Monopoly
 {
     class Joueur
     {
-       private int fond;
+        private int fond;
         private string pion;
         private int position;
         private int prison;
@@ -31,7 +31,7 @@ namespace Monopoly
             var rand = new Random(DateTime.Now.Millisecond + DateTime.Now.Second * 1000 + DateTime.Now.Minute * 1000 * 60);
             int x = rand.Next(pionList.Length);
             pion = pionList[x];
-            pionList[x]="";
+            pionList[x] = "";
             while (pion == "")
             {
                 x = rand.Next(pionList.Length);
@@ -52,13 +52,13 @@ namespace Monopoly
         public bool rollTheDice()
         {
             var rand = new Random(DateTime.Now.Millisecond + DateTime.Now.Second * 1000 + DateTime.Now.Minute * 1000 * 60);
-            int d1 = rand.Next(1,7);
-            int d2 = rand.Next(1,7);
-            Console.WriteLine(d1 + "\t" + d2 +"\t total= "+(d1+d2));
-            bool sortie = d1==d2;
-            if (prison==0 || d1 == d2)
+            int d1 = rand.Next(1, 7);
+            int d2 = rand.Next(1, 7);
+            Console.WriteLine(d1 + "\t" + d2 + "\t total= " + (d1 + d2));
+            bool sortie = d1 == d2;
+            if (prison == 0 || d1 == d2)
             {
-                Console.Write(position+"\t->\t");
+                Console.Write(position + "\t->\t");
                 position += d1 + d2;
                 if (position >= 40)
                 {
@@ -85,6 +85,14 @@ namespace Monopoly
             position = 10;
             prison = 2;
             Console.WriteLine("Straight to jail");
+        }
+        public CaseFactory CurrentCase()
+        {
+            return Plateau.Instance.Board[position];
+        }
+        public void Paye(int cout)
+        {
+            fond -= cout;
         }
     }
 }

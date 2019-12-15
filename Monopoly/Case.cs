@@ -12,8 +12,7 @@ namespace Monopoly
         public abstract string StreetName { get; set; }
         public abstract int Rent { get; set; }
         public abstract int Price { get; set; }
-
         public abstract string ActionName { get; set; }
-
+        public abstract bool GetBuy(Joueur acheteur);
     }
 }

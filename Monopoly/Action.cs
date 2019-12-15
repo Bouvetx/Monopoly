@@ -44,5 +44,9 @@ namespace Monopoly
             get { return this.price; }
             set { this.price = value; }
         }
+        public override string ToString()
+        {
+            return actionName;
+        }
     }
 }

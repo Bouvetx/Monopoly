@@ -83,12 +83,8 @@ namespace Monopoly
 
             Case action = case1.GetCase();
             Console.WriteLine("Action name: {0}", action.ActionName);
-
             OU
-
             Console.WriteLine("street: {0}\nrent: {1}\nprice: {2}", board[2].GetCase().StreetName, board[2].GetCase().Rent, board[2].GetCase().Price);
-            
-            
             */
         }
 
@@ -97,6 +93,13 @@ namespace Monopoly
             get
             {
                 return game;
+            }
+        }
+        public CaseFactory[] Board
+        {
+            get
+            {
+                return board;
             }
         }
 
