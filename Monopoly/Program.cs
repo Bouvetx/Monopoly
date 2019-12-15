@@ -19,6 +19,7 @@ namespace Monopoly
                 Console.ReadKey();
                 while (P.CurrentJoueur().rollTheDice())//Tour du joueur
                 {
+                    P.Afficher(P.CurrentJoueur());
                     Console.WriteLine("Vous éte sur la case : " + P.CurrentJoueur().CurrentCase().GetCase().ToString());
                     if (P.CurrentJoueur().CurrentCase().GetCase().CaseType == "Propriete")
                     {
@@ -53,6 +54,7 @@ namespace Monopoly
                         break;
                     }
                 }
+                P.Afficher(P.CurrentJoueur());
                 Console.WriteLine("Vous éte sur la case : " + P.CurrentJoueur().CurrentCase().GetCase().ToString());
                 if (P.CurrentJoueur().CurrentCase().GetCase().CaseType == "Propriete")
                 {

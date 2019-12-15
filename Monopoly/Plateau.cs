@@ -15,8 +15,6 @@ namespace Monopoly
         private static Plateau instance = null;
         private static readonly object padlock = new object();
 
-
-
         Plateau()
         {
             int num;
@@ -94,6 +92,72 @@ namespace Monopoly
             {
                 return game;
             }
+        }
+        public void Afficher(Joueur player)
+        {
+            Console.WriteLine("╔═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╗");
+            for (int i = 0; i < 11; i++)
+            {
+                for (int j = 0; j < 11; j++)
+                {
+                    if(i==0 && j == 0)
+                    {
+                        Console.Write("║-->");
+                    }
+                    else if(i==0 || i == 11)
+                    {
+                        if (i == 0 && j + i == player.Position)
+                        {
+                            Console.Write("║ █ ");
+                        }
+                        else if (i == 0 && 40 - j - i == player.Position)
+                        {
+                            Console.Write("║ █ ");
+                        }
+                        else
+                        {
+                            Console.Write("║   ");
+                        }
+                    }
+                    else
+                    {
+                        if (j == 11 && j + i == player.Position)
+                        {
+                            Console.Write("║ █ ║");
+                        }
+                        else if (j == 0 && 40 - i == player.Position)
+                        {
+                            Console.Write("║ █ ║");
+                        }
+                        else if (j == 0 || j == 11)
+                        {
+                            Console.Write("║   ║");
+                        }
+                        else if(j==2)
+                        {
+                            Console.Write("                                   ");
+                        }
+                    }
+                }
+                if(i == 0 || i == 11)
+                {
+
+                }
+                if (i == 0)
+                {
+                    Console.WriteLine("\n"+"╠═══╬═══╧═══╧═══╧═══╧═══╧═══╧═══╧═══╧═══╬═══╣");
+                }
+                else if (i == 10)
+                {
+                    Console.WriteLine("\n" + "╠═══╬═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╬═══╣");
+                }
+                else if (i != 11)
+                {
+                    Console.WriteLine("\n" + "╠═══╣                                   ╠═══╣");
+                }
+
+            }
+            Console.WriteLine("\n" + "╚═══╩═══╩═══╩═══╩═══╩═══╩═══╩═══╩═══╩═══╩═══╝");
         }
         public CaseFactory[] Board
         {
