@@ -19,18 +19,19 @@ namespace Monopoly
                 Console.ReadKey();
                 while (P.CurrentJoueur().rollTheDice())//Tour du joueur
                 {
-                    Console.WriteLine("Vous éte sur la case : " + P.CurrentJoueur().CurrentCase().ToString());
+                    Console.WriteLine("Vous éte sur la case : " + P.CurrentJoueur().CurrentCase().GetCase().ToString());
                     if (P.CurrentJoueur().CurrentCase().GetCase().CaseType == "Propriete")
                     {
-                        if ((P.CurrentJoueur().CurrentCase().GetCase().Owner == null)){
+                        if ((P.CurrentJoueur().CurrentCase().GetCase().Owner == null))
+                        {
                             Console.WriteLine("Voullez vous acheter ?");
                             string rep = Console.ReadLine();
-                            while (rep != "yes" && rep != "no")
+                            while (rep != "yes" && rep != "no" && rep != "y" && rep != "n")
                             {
                                 Console.WriteLine("Voullez vous acheter ?(yes or no)");
                                 rep = Console.ReadLine();
                             }
-                            if (rep == "yes")
+                            if (rep == "yes" || rep == "y")
                             {
                                 P.CurrentJoueur().CurrentCase().GetCase().GetBuy(P.CurrentJoueur());
                             }
@@ -39,13 +40,12 @@ namespace Monopoly
                         {
                             P.CurrentJoueur().Paye(P.CurrentJoueur().CurrentCase().GetCase().Rent);
                         }
-                        Console.WriteLine("Vous avez : " + P.CurrentJoueur().Fond + "€");
+                        Console.WriteLine("Vous avez : " + P.CurrentJoueur().Fond + " Euros");
                     }
                     else
                     {
-                        Console.WriteLine("Vous ");
+
                     }
-                    //Action du joueur
                     i++;
                     if (i == 3)
                     {
@@ -59,12 +59,12 @@ namespace Monopoly
                     if ((P.CurrentJoueur().CurrentCase().GetCase().Owner == null)){
                         Console.WriteLine("Voullez vous acheter ?");
                         string rep = Console.ReadLine();
-                        while (rep != "yes" && rep != "no")
+                        while (rep != "yes" && rep != "no" && rep!="y" && rep != "n")
                         {
                             Console.WriteLine("Voullez vous acheter ?(yes or no)");
                             rep = Console.ReadLine();
                         }
-                        if (rep == "yes")
+                        if (rep == "yes" || rep=="y")
                         {
                             P.CurrentJoueur().CurrentCase().GetCase().GetBuy(P.CurrentJoueur());
                         }

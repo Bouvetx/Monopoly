@@ -58,7 +58,7 @@ namespace Monopoly
             board[19] = new ProprieteFactory("Place Pigalle", 25, 200); //ORANGE
             board[20] = new ActionFactory("FreePark");//
             board[21] = new ProprieteFactory("Avenue Matignon", 25, 220); //ROUGE
-            board[22] = new ActionFactory("Départ");//
+            board[22] = new ActionFactory("Chance");//
             board[23] = new ProprieteFactory("Boulevard Malesherbes", 25, 220); //ROUGE
             board[24] = new ProprieteFactory("Avenue Henri Martin", 25, 240); //ROUGE
             board[25] = new ProprieteFactory("Gare du Nord", 25, 200); //GARE
