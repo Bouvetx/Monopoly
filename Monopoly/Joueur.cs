@@ -48,6 +48,13 @@ namespace Monopoly
                 return pion;
             }
         }
+        public int Fond
+        {
+            get
+            {
+                return fond;
+            }
+        }
 
         public bool rollTheDice()
         {

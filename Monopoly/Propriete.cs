@@ -47,6 +47,10 @@ namespace Monopoly
             get { return this.actionName; }
             set { this.actionName = value; }
         }
+        public override Joueur Owner
+        {
+            get { return owner; }
+        }
         public override string ToString()
         {
             if (owner == null)

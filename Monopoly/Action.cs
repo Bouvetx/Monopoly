@@ -28,6 +28,10 @@ namespace Monopoly
             get { return this.actionName; }
             set { this.actionName = value; }
         }
+        public override Joueur Owner
+        {
+            get { return null; }
+        }
 
         public override string StreetName
         {

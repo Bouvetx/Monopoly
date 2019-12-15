@@ -22,7 +22,24 @@ namespace Monopoly
                     Console.WriteLine("Vous éte sur la case : " + P.CurrentJoueur().CurrentCase().ToString());
                     if (P.CurrentJoueur().CurrentCase().GetCase().CaseType == "Propriete")
                     {
-                        
+                        if ((P.CurrentJoueur().CurrentCase().GetCase().Owner == null)){
+                            Console.WriteLine("Voullez vous acheter ?");
+                            string rep = Console.ReadLine();
+                            while (rep != "yes" && rep != "no")
+                            {
+                                Console.WriteLine("Voullez vous acheter ?(yes or no)");
+                                rep = Console.ReadLine();
+                            }
+                            if (rep == "yes")
+                            {
+                                P.CurrentJoueur().CurrentCase().GetCase().GetBuy(P.CurrentJoueur());
+                            }
+                        }
+                        else
+                        {
+                            P.CurrentJoueur().Paye(P.CurrentJoueur().CurrentCase().GetCase().Rent);
+                        }
+                        Console.WriteLine("Vous avez : " + P.CurrentJoueur().Fond + "€");
                     }
                     else
                     {
@@ -39,25 +56,31 @@ namespace Monopoly
                 Console.WriteLine("Vous éte sur la case : " + P.CurrentJoueur().CurrentCase().GetCase().ToString());
                 if (P.CurrentJoueur().CurrentCase().GetCase().CaseType == "Propriete")
                 {
-                    Console.WriteLine("Voullez vous acheter ?");
-                    string rep =Console.ReadLine();
-                    while (rep !="yes" && rep != "no")
-                    {
-                        Console.WriteLine("Voullez vous acheter ?(yes or no)");
-                        rep = Console.ReadLine();
+                    if ((P.CurrentJoueur().CurrentCase().GetCase().Owner == null)){
+                        Console.WriteLine("Voullez vous acheter ?");
+                        string rep = Console.ReadLine();
+                        while (rep != "yes" && rep != "no")
+                        {
+                            Console.WriteLine("Voullez vous acheter ?(yes or no)");
+                            rep = Console.ReadLine();
+                        }
+                        if (rep == "yes")
+                        {
+                            P.CurrentJoueur().CurrentCase().GetCase().GetBuy(P.CurrentJoueur());
+                        }
                     }
-                    if (rep == "yes")
+                    else
                     {
-                        P.CurrentJoueur().CurrentCase().GetCase().GetBuy(P.CurrentJoueur());
+                        P.CurrentJoueur().Paye(P.CurrentJoueur().CurrentCase().GetCase().Rent);
                     }
+                    Console.WriteLine("Vous avez : " + P.CurrentJoueur().Fond + " Euros");
                 }
                 else
                 {
                     
                 }
-
+                Console.WriteLine("\n");
                 P.NextJoueur();
-                Console.ReadLine();
             }
         }
     }
