@@ -102,19 +102,19 @@ namespace Monopoly
             Console.WriteLine("╔═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╗");
             for (int i = 0; i < 11; i++)
             {
-                for (int j = 0; j < 11; j++)
+                for (int j = 0; j < 12; j++)
                 {
                     if(i==0 && j == 0)
                     {
                         Console.Write("║-->");
                     }
-                    else if(i==0 || i == 11)
+                    else if(i==0 || i == 10)
                     {
-                        if (i == 0 && j + i == player.Position)
+                        if (j == 11)
                         {
-                            Console.Write("║ █ ");
+                            Console.Write("║");
                         }
-                        else if (i == 0 && 40 - j - i == player.Position)
+                        else if ((i == 0 && j + i == player.Position) || (i == 10 && 40 - j - i  == player.Position))
                         {
                             Console.Write("║ █ ");
                         }
@@ -125,11 +125,7 @@ namespace Monopoly
                     }
                     else
                     {
-                        if (j == 11 && j + i == player.Position)
-                        {
-                            Console.Write("║ █ ║");
-                        }
-                        else if (j == 0 && 40 - i == player.Position)
+                        if ((j == 11 && j + i -1 == player.Position)|| (j == 0 && 40 - i == player.Position))
                         {
                             Console.Write("║ █ ║");
                         }
@@ -143,19 +139,15 @@ namespace Monopoly
                         }
                     }
                 }
-                if(i == 0 || i == 11)
-                {
-
-                }
                 if (i == 0)
                 {
                     Console.WriteLine("\n"+"╠═══╬═══╧═══╧═══╧═══╧═══╧═══╧═══╧═══╧═══╬═══╣");
                 }
-                else if (i == 10)
+                else if (i == 9)
                 {
                     Console.WriteLine("\n" + "╠═══╬═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╬═══╣");
                 }
-                else if (i != 11)
+                else if (i != 10)
                 {
                     Console.WriteLine("\n" + "╠═══╣                                   ╠═══╣");
                 }
