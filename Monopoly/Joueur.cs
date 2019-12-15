@@ -61,9 +61,13 @@ namespace Monopoly
             {
                 return position;
             }
+            set
+            {
+                position = value;
+            }
         }
 
-        public bool rollTheDice()
+        public bool rollTheDice()//et avance true if double
         {
             var rand = new Random(DateTime.Now.Millisecond + DateTime.Now.Second * 1000 + DateTime.Now.Minute * 1000 * 60);
             int d1 = rand.Next(1, 7);
@@ -76,7 +80,7 @@ namespace Monopoly
                 position += d1 + d2;
                 if (position >= 40)
                 {
-                    fond += 200;
+                    Paye(-200);
                     position -= 40;
                 }
                 Console.WriteLine(position);
@@ -107,6 +111,7 @@ namespace Monopoly
         public void Paye(int cout)
         {
             fond -= cout;
+            Console.WriteLine("Vous avez : " + fond + " Euros");
         }
     }
 }

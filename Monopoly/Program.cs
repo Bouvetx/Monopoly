@@ -25,7 +25,8 @@ namespace Monopoly
                     {
                         if ((P.CurrentJoueur().CurrentCase().GetCase().Owner == null))
                         {
-                            Console.WriteLine("Voullez vous acheter ?");
+                            Console.WriteLine("Vous avez : " + P.CurrentJoueur().Fond + " Euros");
+                            Console.WriteLine("Voullez vous acheter ?(yes or no)");
                             string rep = Console.ReadLine();
                             while (rep != "yes" && rep != "no" && rep != "y" && rep != "n")
                             {
@@ -41,11 +42,34 @@ namespace Monopoly
                         {
                             P.CurrentJoueur().Paye(P.CurrentJoueur().CurrentCase().GetCase().Rent);
                         }
-                        Console.WriteLine("Vous avez : " + P.CurrentJoueur().Fond + " Euros");
                     }
                     else
                     {
-
+                        if (P.CurrentJoueur().CurrentCase().GetCase().ActionName == "Taxe de Luxe")
+                        {
+                            Console.WriteLine("Taxe de Luxe , paye 100");
+                            P.CurrentJoueur().Paye(100);
+                        }
+                        if (P.CurrentJoueur().CurrentCase().GetCase().ActionName == "Impot sur le revenu")
+                        {
+                            Console.WriteLine("Impot sur le revenu , paye 200");
+                            P.CurrentJoueur().Paye(200);
+                        }
+                        if (P.CurrentJoueur().CurrentCase().GetCase().ActionName == "FreeParc")
+                        {
+                            Console.WriteLine("FreeParc , collect 200");
+                            P.CurrentJoueur().Paye(-200);
+                        }
+                        if (P.CurrentJoueur().CurrentCase().GetCase().ActionName == "Caisse de Communauté")
+                        {
+                            Console.WriteLine("Draw a Caisse de Communauté card");
+                            Action.ReadCard(Action.drawcard('o'));
+                        }
+                        if (P.CurrentJoueur().CurrentCase().GetCase().ActionName == "Chance")
+                        {
+                            Console.WriteLine("Draw a Chance card");
+                            Action.ReadCard(Action.drawcard('a'));
+                        }
                     }
                     i++;
                     if (i == 3)
@@ -59,7 +83,8 @@ namespace Monopoly
                 if (P.CurrentJoueur().CurrentCase().GetCase().CaseType == "Propriete")
                 {
                     if ((P.CurrentJoueur().CurrentCase().GetCase().Owner == null)){
-                        Console.WriteLine("Voullez vous acheter ?");
+                        Console.WriteLine("Vous avez : " + P.CurrentJoueur().Fond + " Euros");
+                        Console.WriteLine("Voullez vous acheter ?(yes or no)");
                         string rep = Console.ReadLine();
                         while (rep != "yes" && rep != "no" && rep!="y" && rep != "n")
                         {
@@ -75,11 +100,34 @@ namespace Monopoly
                     {
                         P.CurrentJoueur().Paye(P.CurrentJoueur().CurrentCase().GetCase().Rent);
                     }
-                    Console.WriteLine("Vous avez : " + P.CurrentJoueur().Fond + " Euros");
                 }
                 else
                 {
-                    
+                    if (P.CurrentJoueur().CurrentCase().GetCase().ActionName == "Taxe de Luxe")
+                    {
+                        Console.WriteLine("Taxe de Luxe , paye 100");
+                        P.CurrentJoueur().Paye(100);
+                    }
+                    if (P.CurrentJoueur().CurrentCase().GetCase().ActionName == "Impot sur le revenu")
+                    {
+                        Console.WriteLine("Impot sur le revenu , paye 200");
+                        P.CurrentJoueur().Paye(200);
+                    }
+                    if (P.CurrentJoueur().CurrentCase().GetCase().ActionName == "FreeParc")
+                    {
+                        Console.WriteLine("FreeParc , collect 200");
+                        P.CurrentJoueur().Paye(-200);
+                    }
+                    if (P.CurrentJoueur().CurrentCase().GetCase().ActionName == "Caisse de Communauté")
+                    {
+                        Console.WriteLine("Draw a Caisse de Communauté card");
+                        Action.ReadCard(Action.drawcard('o'));
+                    }
+                    if (P.CurrentJoueur().CurrentCase().GetCase().ActionName == "Chance")
+                    {
+                        Console.WriteLine("Draw a Chance card");
+                        Action.ReadCard(Action.drawcard('a'));
+                    }
                 }
                 Console.WriteLine("\n");
                 P.NextJoueur();
