@@ -40,6 +40,7 @@ namespace Monopoly
                 Console.ReadLine();
             }
             Console.ReadKey();
+
         }
     }
 }
