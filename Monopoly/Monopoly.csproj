@@ -43,11 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Achat.cs" />
+    <Compile Include="Observer.cs" />
     <Compile Include="Action.cs" />
     <Compile Include="ActionFactory.cs" />
     <Compile Include="Case.cs" />
     <Compile Include="CaseFactory.cs" />
+    <Compile Include="IJoueur.cs" />
     <Compile Include="Joueur.cs" />
+    <Compile Include="JoueurObserver.cs" />
     <Compile Include="Plateau.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
