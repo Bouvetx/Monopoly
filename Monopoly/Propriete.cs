@@ -14,6 +14,7 @@ namespace Monopoly
         private int price;
         private string actionName = null;
         private Joueur owner;
+        private Plateau board;
 
         public Propriete(string streetName, int rent, int price)
         {
@@ -66,6 +67,7 @@ namespace Monopoly
         {
             acheteur.Paye(this.price);
             this.owner = acheteur;
+            Plateau.Instance.listAchats[acheteur.Position].Ownership = acheteur;
             return true;
         }
     }

@@ -10,6 +10,7 @@ namespace Monopoly
     {
         private CaseFactory[] board;
         private Joueur[] listJoueur;
+        public Achat[] listAchats;
         private static int numCurrentJoueur=0;
         private bool game;
         private static Plateau instance = null;
@@ -30,6 +31,8 @@ namespace Monopoly
             {
                 listJoueur[i] = new Joueur();
             }
+
+            
 
             game = true;
             board = new CaseFactory[40];
@@ -75,14 +78,33 @@ namespace Monopoly
             board[38] = new ActionFactory("Taxe de Luxe");//
             board[39] = new ProprieteFactory("Rue de la Paix", 100, 400); //BLEU
 
+            listAchats = new Achat[40];
+            for(int i = 0; i<40;i++)
+            {
+                listAchats[i] = new Achat(board[i].GetCase().Owner);
+            }
+            for (int i = 0; i < 40; i++)
+            {
+                foreach (Joueur j in listJoueur)
+                {
+                    listAchats[i].Attach(new JoueurObserver(j));
+                }
+            }
             /*
-            board[1] = new ActionFactory("Départ");
-            board[2] = new ProprieteFactory("rue des andes", 25, 120);
+            Achat achat1 = new Achat(board[1].GetCase().Owner);
+            foreach (Joueur j in listJoueur)
+            {
+                achat1.Attach(new JoueurObserver(j));
+            }
 
-            Case action = case1.GetCase();
-            Console.WriteLine("Action name: {0}", action.ActionName);
-            OU
-            Console.WriteLine("street: {0}\nrent: {1}\nprice: {2}", board[2].GetCase().StreetName, board[2].GetCase().Rent, board[2].GetCase().Price);
+            /*
+            for (int i = 0; i < 39; i++)
+            {
+                foreach (Joueur j in listJoueur)
+                {
+                    listAchats[i].Attach(new JoueurObserver(j));
+                }
+            } 
             */
         }
 

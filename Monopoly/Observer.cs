@@ -36,11 +36,13 @@ namespace Monopoly
             get { return owner; }
             set
             {
-                if(owner !=value)
-                {
-                    owner = value;
-                    Notify();
-                }
+                owner = value;
+                Notify();
+                /* if(owner !=value)
+                 {
+                     owner = value;
+                     Notify();
+                 }*/
             }
         }
     }

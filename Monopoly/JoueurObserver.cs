@@ -8,17 +8,17 @@ namespace Monopoly
 {
     class JoueurObserver : IJoueur
     {
-        private string pion;
+        private Joueur joueur;
         private Observer observ;
 
-        public JoueurObserver(string pion)
+        public JoueurObserver(Joueur joueur)
         {
-            this.pion = pion;
+            this.joueur = joueur;
         }
 
         public void Update(Observer observ)
         {
-            Console.WriteLine("Notified "+pion+" of "+ observ.GetType().Name+" "+observ.Ownership);
+            Console.WriteLine("Notified "+joueur.Pion+" from the purchase of "+Plateau.Instance.CurrentJoueur().CurrentCase().GetCase().StreetName+" by player "+Plateau.Instance.CurrentJoueur().Pion);
         }
     }
 }
