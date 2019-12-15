@@ -13,6 +13,7 @@ namespace Monopoly
         private int rent;
         private int price;
         private string actionName = null;
+        private Joueur owner;
 
         public Propriete(string streetName, int rent, int price)
         {
@@ -20,6 +21,7 @@ namespace Monopoly
             this.streetName = streetName;
             this.rent = rent;
             this.price = price;
+            owner = null;
         }
         public override string CaseType
         {
@@ -45,9 +47,26 @@ namespace Monopoly
             get { return this.actionName; }
             set { this.actionName = value; }
         }
+        public override Joueur Owner
+        {
+            get { return owner; }
+        }
         public override string ToString()
         {
-            return base.ToString();
+            if (owner == null)
+            {
+                return this.streetName + "\tcout : " + this.price;
+            }
+            else
+            {
+                return this.streetName + "\tTu doit payer : " + this.rent +"\ta : "+this.owner;
+            }
+        }
+        public override bool GetBuy(Joueur acheteur)
+        {
+            acheteur.Paye(this.price);
+            this.owner = acheteur;
+            return true;
         }
     }
 }

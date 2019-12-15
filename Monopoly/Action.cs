@@ -28,6 +28,10 @@ namespace Monopoly
             get { return this.actionName; }
             set { this.actionName = value; }
         }
+        public override Joueur Owner
+        {
+            get { return null; }
+        }
 
         public override string StreetName
         {
@@ -46,7 +50,11 @@ namespace Monopoly
         }
         public override string ToString()
         {
-            return "sur la case "+streetName+" qui coute";
+            return actionName;
+        }
+        public override bool GetBuy(Joueur acheteur)
+        {
+            return false;
         }
     }
 }

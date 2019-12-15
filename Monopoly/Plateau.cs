@@ -15,8 +15,6 @@ namespace Monopoly
         private static Plateau instance = null;
         private static readonly object padlock = new object();
 
-
-
         Plateau()
         {
             int num;
@@ -57,15 +55,15 @@ namespace Monopoly
             board[18] = new ProprieteFactory("Boulevart Saint-Michel", 45, 180);//ORANGE
             board[19] = new ProprieteFactory("Place Pigalle", 50, 200); //ORANGE
             board[20] = new ActionFactory("FreePark");//
-            board[21] = new ProprieteFactory("Avenue Matignon", 55, 220); //ROUGE
-            board[22] = new ActionFactory("Départ");//
-            board[23] = new ProprieteFactory("Boulevard Malesherbes", 55, 220); //ROUGE
-            board[24] = new ProprieteFactory("Avenue Henri Martin", 60, 240); //ROUGE
-            board[25] = new ProprieteFactory("Gare du Nord", 50, 200); //GARE
-            board[26] = new ProprieteFactory("Faubourg Saint Honore", 65, 260); //JAUNE
-            board[27] = new ProprieteFactory("Place de la Bourse", 65, 260); //JAUNE
-            board[28] = new ProprieteFactory("Compagnie de distribution des eaux", 30, 150); //COMPAGNIE
-            board[29] = new ProprieteFactory("Rue Lafayette", 70, 280); //JAUNE
+            board[21] = new ProprieteFactory("Avenue Matignon", 25, 220); //ROUGE
+            board[22] = new ActionFactory("Chance");//
+            board[23] = new ProprieteFactory("Boulevard Malesherbes", 25, 220); //ROUGE
+            board[24] = new ProprieteFactory("Avenue Henri Martin", 25, 240); //ROUGE
+            board[25] = new ProprieteFactory("Gare du Nord", 25, 200); //GARE
+            board[26] = new ProprieteFactory("Faubourg Saint Honore", 25, 260); //JAUNE
+            board[27] = new ProprieteFactory("Place de la Bourse", 25, 260); //JAUNE
+            board[28] = new ProprieteFactory("Compagnie de distribution des eaux", 25, 150); //COMPAGNIE
+            board[29] = new ProprieteFactory("Rue Lafayette", 25, 280); //JAUNE
             board[30] = new ActionFactory("GoToJail");//
             board[31] = new ProprieteFactory("Avenue de Breteuil", 75, 300); //VERT
             board[32] = new ProprieteFactory("Avenue Foch", 75, 300); //VERT
@@ -83,12 +81,8 @@ namespace Monopoly
 
             Case action = case1.GetCase();
             Console.WriteLine("Action name: {0}", action.ActionName);
-
             OU
-
             Console.WriteLine("street: {0}\nrent: {1}\nprice: {2}", board[2].GetCase().StreetName, board[2].GetCase().Rent, board[2].GetCase().Price);
-            
-            
             */
         }
 
@@ -97,6 +91,79 @@ namespace Monopoly
             get
             {
                 return game;
+            }
+        }
+        public void Afficher(Joueur player)
+        {
+            Console.WriteLine("╔═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╗");
+            for (int i = 0; i < 11; i++)
+            {
+                for (int j = 0; j < 11; j++)
+                {
+                    if(i==0 && j == 0)
+                    {
+                        Console.Write("║-->");
+                    }
+                    else if(i==0 || i == 11)
+                    {
+                        if (i == 0 && j + i == player.Position)
+                        {
+                            Console.Write("║ █ ");
+                        }
+                        else if (i == 0 && 40 - j - i == player.Position)
+                        {
+                            Console.Write("║ █ ");
+                        }
+                        else
+                        {
+                            Console.Write("║   ");
+                        }
+                    }
+                    else
+                    {
+                        if (j == 11 && j + i == player.Position)
+                        {
+                            Console.Write("║ █ ║");
+                        }
+                        else if (j == 0 && 40 - i == player.Position)
+                        {
+                            Console.Write("║ █ ║");
+                        }
+                        else if (j == 0 || j == 11)
+                        {
+                            Console.Write("║   ║");
+                        }
+                        else if(j==2)
+                        {
+                            Console.Write("                                   ");
+                        }
+                    }
+                }
+                if(i == 0 || i == 11)
+                {
+
+                }
+                if (i == 0)
+                {
+                    Console.WriteLine("\n"+"╠═══╬═══╧═══╧═══╧═══╧═══╧═══╧═══╧═══╧═══╬═══╣");
+                }
+                else if (i == 10)
+                {
+                    Console.WriteLine("\n" + "╠═══╬═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╬═══╣");
+                }
+                else if (i != 11)
+                {
+                    Console.WriteLine("\n" + "╠═══╣                                   ╠═══╣");
+                }
+
+            }
+            Console.WriteLine("\n" + "╚═══╩═══╩═══╩═══╩═══╩═══╩═══╩═══╩═══╩═══╩═══╝");
+        }
+        public CaseFactory[] Board
+        {
+            get
+            {
+                return board;
             }
         }
 

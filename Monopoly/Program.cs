@@ -10,24 +10,43 @@ namespace Monopoly
     {
         static void Main(string[] args)
         {
-            /*
-            CaseFactory case1 = new ActionFactory("Départ");
-            CaseFactory case2 = new ProprieteFactory("rue des andes", 25, 120);
-            //Case action = case1.GetCase();
-            Console.WriteLine("Action name: {0}",case1.GetCase().ActionName);
-            Case prop = case2.GetCase();
-            Console.WriteLine("street: {0}\nrent: {1}\nprice: {2}", prop.StreetName, prop.Rent, prop.Price);
-            */
-            Console.WriteLine();
             Plateau P = Plateau.Instance;
-            int numJ=0;
             int i = 0;
             while (P.Game == true)//
             {
                 i = 0;
+                Console.WriteLine("Appuyer sur une touche pour lancer les dés");
+                Console.ReadKey();
                 while (P.CurrentJoueur().rollTheDice())//Tour du joueur
                 {
-                    //Action du joueur
+                    P.Afficher(P.CurrentJoueur());
+                    Console.WriteLine("Vous éte sur la case : " + P.CurrentJoueur().CurrentCase().GetCase().ToString());
+                    if (P.CurrentJoueur().CurrentCase().GetCase().CaseType == "Propriete")
+                    {
+                        if ((P.CurrentJoueur().CurrentCase().GetCase().Owner == null))
+                        {
+                            Console.WriteLine("Voullez vous acheter ?");
+                            string rep = Console.ReadLine();
+                            while (rep != "yes" && rep != "no" && rep != "y" && rep != "n")
+                            {
+                                Console.WriteLine("Voullez vous acheter ?(yes or no)");
+                                rep = Console.ReadLine();
+                            }
+                            if (rep == "yes" || rep == "y")
+                            {
+                                P.CurrentJoueur().CurrentCase().GetCase().GetBuy(P.CurrentJoueur());
+                            }
+                        }
+                        else
+                        {
+                            P.CurrentJoueur().Paye(P.CurrentJoueur().CurrentCase().GetCase().Rent);
+                        }
+                        Console.WriteLine("Vous avez : " + P.CurrentJoueur().Fond + " Euros");
+                    }
+                    else
+                    {
+
+                    }
                     i++;
                     if (i == 3)
                     {
@@ -35,12 +54,36 @@ namespace Monopoly
                         break;
                     }
                 }
-                
+                P.Afficher(P.CurrentJoueur());
+                Console.WriteLine("Vous éte sur la case : " + P.CurrentJoueur().CurrentCase().GetCase().ToString());
+                if (P.CurrentJoueur().CurrentCase().GetCase().CaseType == "Propriete")
+                {
+                    if ((P.CurrentJoueur().CurrentCase().GetCase().Owner == null)){
+                        Console.WriteLine("Voullez vous acheter ?");
+                        string rep = Console.ReadLine();
+                        while (rep != "yes" && rep != "no" && rep!="y" && rep != "n")
+                        {
+                            Console.WriteLine("Voullez vous acheter ?(yes or no)");
+                            rep = Console.ReadLine();
+                        }
+                        if (rep == "yes" || rep=="y")
+                        {
+                            P.CurrentJoueur().CurrentCase().GetCase().GetBuy(P.CurrentJoueur());
+                        }
+                    }
+                    else
+                    {
+                        P.CurrentJoueur().Paye(P.CurrentJoueur().CurrentCase().GetCase().Rent);
+                    }
+                    Console.WriteLine("Vous avez : " + P.CurrentJoueur().Fond + " Euros");
+                }
+                else
+                {
+                    
+                }
+                Console.WriteLine("\n");
                 P.NextJoueur();
-                Console.ReadLine();
             }
-            Console.ReadKey();
-
         }
     }
 }
