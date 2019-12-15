@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Monopoly
 {
-    class Joueur
+    public class Joueur
     {
         private int fond;
         private string pion;

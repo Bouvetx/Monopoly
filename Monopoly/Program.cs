@@ -48,7 +48,7 @@ namespace Monopoly
                     }
                     if (rep == "yes")
                     {
-                        (P.CurrentJoueur().CurrentCase().GetCase().GetBuy(P.CurrentJoueur());
+                        P.CurrentJoueur().CurrentCase().GetCase().GetBuy(P.CurrentJoueur());
                     }
                 }
                 else

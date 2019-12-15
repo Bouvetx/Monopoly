@@ -48,5 +48,9 @@ namespace Monopoly
         {
             return actionName;
         }
+        public override bool GetBuy(Joueur acheteur)
+        {
+            return false;
+        }
     }
 }
