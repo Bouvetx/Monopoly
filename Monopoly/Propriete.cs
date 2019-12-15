@@ -45,6 +45,9 @@ namespace Monopoly
             get { return this.actionName; }
             set { this.actionName = value; }
         }
-
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
