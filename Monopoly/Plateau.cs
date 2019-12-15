@@ -32,51 +32,49 @@ namespace Monopoly
                 listJoueur[i] = new Joueur();
             }
 
-            
-
             game = true;
             board = new CaseFactory[40];
 
             board[0] = new ActionFactory("Départ");
-            board[1] = new ProprieteFactory("Boulevard de Belleville", 15, 60); //MARRON
-            board[2] = new ActionFactory("Caisse de Communauté");//
-            board[3] = new ProprieteFactory("Rue Lecourbe", 15, 60);//MARRON
-            board[4] = new ActionFactory("Impot sur le revenu");//
-            board[5] = new ProprieteFactory("Gare Montparnasse", 50, 200); //GARE
-            board[6] = new ProprieteFactory("Rue de Vaugirard", 25, 100); //BLANC
-            board[7] = new ActionFactory("Chance");//
-            board[8] = new ProprieteFactory("Rue de Courcelles", 25, 100); //BLANC
-            board[9] = new ProprieteFactory("Avenue de la république", 30, 120); //BLANC
-            board[10] = new ActionFactory("VisitJail");//
-            board[11] = new ProprieteFactory("Boulevard de la Villette", 35, 140); //ROSE
-            board[12] = new ProprieteFactory("Compagnie de distribution d'electricité", 30, 150); //COMPAGNIE
-            board[13] = new ProprieteFactory("Avenue de Neuilly", 35, 140); //ROSE
-            board[14] = new ProprieteFactory("Rue de Paradis", 40, 160); //ROSE
-            board[15] = new ProprieteFactory("Gare de Lyon", 50, 200); //GARE
-            board[16] = new ProprieteFactory("Avenue Mozart", 45, 180); //ORANGE
-            board[17] = new ActionFactory("Caisse de Communauté");//
-            board[18] = new ProprieteFactory("Boulevart Saint-Michel", 45, 180);//ORANGE
-            board[19] = new ProprieteFactory("Place Pigalle", 50, 200); //ORANGE
-            board[20] = new ActionFactory("FreePark");//
-            board[21] = new ProprieteFactory("Avenue Matignon", 25, 220); //ROUGE
-            board[22] = new ActionFactory("Chance");//
-            board[23] = new ProprieteFactory("Boulevard Malesherbes", 25, 220); //ROUGE
-            board[24] = new ProprieteFactory("Avenue Henri Martin", 25, 240); //ROUGE
-            board[25] = new ProprieteFactory("Gare du Nord", 25, 200); //GARE
-            board[26] = new ProprieteFactory("Faubourg Saint Honore", 25, 260); //JAUNE
-            board[27] = new ProprieteFactory("Place de la Bourse", 25, 260); //JAUNE
-            board[28] = new ProprieteFactory("Compagnie de distribution des eaux", 25, 150); //COMPAGNIE
-            board[29] = new ProprieteFactory("Rue Lafayette", 25, 280); //JAUNE
-            board[30] = new ActionFactory("GoToJail");//
-            board[31] = new ProprieteFactory("Avenue de Breteuil", 75, 300); //VERT
-            board[32] = new ProprieteFactory("Avenue Foch", 75, 300); //VERT
+            board[1] = new ProprieteFactory("Boulevard de Belleville", 15, 60);
+            board[2] = new ActionFactory("Caisse de Communauté");
+            board[3] = new ProprieteFactory("Rue Lecourbe", 15, 60);
+            board[4] = new ActionFactory("Impot sur le revenu");
+            board[5] = new ProprieteFactory("Gare Montparnasse", 50, 200); 
+            board[6] = new ProprieteFactory("Rue de Vaugirard", 25, 100); 
+            board[7] = new ActionFactory("Chance");
+            board[8] = new ProprieteFactory("Rue de Courcelles", 25, 100); 
+            board[9] = new ProprieteFactory("Avenue de la république", 30, 120); 
+            board[10] = new ActionFactory("VisitJail");
+            board[11] = new ProprieteFactory("Boulevard de la Villette", 35, 140); 
+            board[12] = new ProprieteFactory("Compagnie de distribution d'electricité", 30, 150); 
+            board[13] = new ProprieteFactory("Avenue de Neuilly", 35, 140);
+            board[14] = new ProprieteFactory("Rue de Paradis", 40, 160); 
+            board[15] = new ProprieteFactory("Gare de Lyon", 50, 200);
+            board[16] = new ProprieteFactory("Avenue Mozart", 45, 180); 
+            board[17] = new ActionFactory("Caisse de Communauté");
+            board[18] = new ProprieteFactory("Boulevart Saint-Michel", 45, 180);
+            board[19] = new ProprieteFactory("Place Pigalle", 50, 200); 
+            board[20] = new ActionFactory("FreePark");
+            board[21] = new ProprieteFactory("Avenue Matignon", 25, 220);
+            board[22] = new ActionFactory("Chance");
+            board[23] = new ProprieteFactory("Boulevard Malesherbes", 25, 220);
+            board[24] = new ProprieteFactory("Avenue Henri Martin", 25, 240);
+            board[25] = new ProprieteFactory("Gare du Nord", 25, 200); 
+            board[26] = new ProprieteFactory("Faubourg Saint Honore", 25, 260); 
+            board[27] = new ProprieteFactory("Place de la Bourse", 25, 260); 
+            board[28] = new ProprieteFactory("Compagnie de distribution des eaux", 25, 150); 
+            board[29] = new ProprieteFactory("Rue Lafayette", 25, 280); 
+            board[30] = new ActionFactory("GoToJail");
+            board[31] = new ProprieteFactory("Avenue de Breteuil", 75, 300); 
+            board[32] = new ProprieteFactory("Avenue Foch", 75, 300); 
             board[33] = new ActionFactory("Caisse de Communauté");
-            board[34] = new ProprieteFactory("Boulevard des Capucines", 80, 320); //VERT
-            board[35] = new ProprieteFactory("Gare St Lazare", 50, 200); //GARE
-            board[36] = new ActionFactory("Chance");//
-            board[37] = new ProprieteFactory("Boulevard des Champs-Elysées", 90, 350); //BLEU
-            board[38] = new ActionFactory("Taxe de Luxe");//
-            board[39] = new ProprieteFactory("Rue de la Paix", 100, 400); //BLEU
+            board[34] = new ProprieteFactory("Boulevard des Capucines", 80, 320); 
+            board[35] = new ProprieteFactory("Gare St Lazare", 50, 200); 
+            board[36] = new ActionFactory("Chance");
+            board[37] = new ProprieteFactory("Boulevard des Champs-Elysées", 90, 350); 
+            board[38] = new ActionFactory("Taxe de Luxe");
+            board[39] = new ProprieteFactory("Rue de la Paix", 100, 400); 
 
             listAchats = new Achat[40];
             for(int i = 0; i<40;i++)
@@ -90,24 +88,8 @@ namespace Monopoly
                     listAchats[i].Attach(new JoueurObserver(j));
                 }
             }
-            /*
-            Achat achat1 = new Achat(board[1].GetCase().Owner);
-            foreach (Joueur j in listJoueur)
-            {
-                achat1.Attach(new JoueurObserver(j));
-            }
-
-            /*
-            for (int i = 0; i < 39; i++)
-            {
-                foreach (Joueur j in listJoueur)
-                {
-                    listAchats[i].Attach(new JoueurObserver(j));
-                }
-            } 
-            */
         }
-
+        
         public bool Game
         {
             get
